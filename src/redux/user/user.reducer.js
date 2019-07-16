@@ -1,3 +1,4 @@
+import { UserActionTypes } from './user.types';
 /**
  * Reducer is just a function that gets two properties
  * a state - the last or initial state
@@ -5,12 +6,12 @@
  */
 
 const INITIAL_STATE = {
-     currentUser: null
+    currentUser: null
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
-    switch(action.type) {
-        case 'SET_CURRENT_USER':
+    switch (action.type) {
+        case UserActionTypes.SET_CURRENT_USER:
             return {
                 ...state, //always spread in everything on the state
                 currentUser: action.payload
